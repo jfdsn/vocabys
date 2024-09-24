@@ -20,10 +20,10 @@
             <a href="/">Vocabys</a>
         </div>
         <nav>
-            <ul class="flex space-x-12 text-lg font-semibold text-white">
-                <li><a href="/" class="hover:text-gray-300">Home</a></li>
-                <li><a href="/#about" class="hover:text-gray-300">About</a></li>
-                <li><a href="/#start" class="hover:text-gray-300">Get Started</a></li>
+            <ul class="flex space-x-6 text-lg font-semibold text-white">
+                <li><a href="/" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-300">Home</a></li>
+                <li><a href="/#about" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-300">About</a></li>
+                <li><a href="/#start" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-300">Get Started</a></li>
             </ul>    
         </nav>
         <div class="text-white">
