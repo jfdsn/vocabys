@@ -1,5 +1,6 @@
 <script>
     import FlagBtn from "$lib/components/FlagBtn.svelte";
+    import LangContainer from "$lib/components/LangContainer.svelte";
 </script>
 
 <section id="about" class="text-9xl">
@@ -9,7 +10,7 @@
     Tailwind CSS works by scanning all of your HTML files, JavaScript components, and any other templates for class names, generating the corresponding styles and then writing them to a static CSS file.Get started with Tailwind CSS
 </section>
 
-<section id="start">
-    <a href="/vocabulary">Teste next Page</a>
-    <FlagBtn countryCode = 'br' label='Portuguese' translate='pt'/>
+<section id="start" class="flex flex-wrap flex-col items-center p-4">
+    <span>Escolha qual língua quer aprender e comece agora!</span>
+    <LangContainer />
 </section>
