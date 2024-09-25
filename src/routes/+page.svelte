@@ -1,3 +1,7 @@
+<script>
+    import FlagBtn from "$lib/components/FlagBtn.svelte";
+</script>
+
 <section id="about" class="text-9xl">
     <h1>Welcome to SvelteKit</h1>
     <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
@@ -7,4 +11,5 @@
 
 <section id="start">
     <a href="/vocabulary">Teste next Page</a>
+    <FlagBtn countryCode = 'br' label='Portuguese' translate='pt'/>
 </section>
