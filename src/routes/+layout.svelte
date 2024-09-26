@@ -5,8 +5,8 @@
 </script>
 
 <Header />
-<main class="min-h-screen bg-slate-600 ">
-    <div class="pt-20 text-zinc-50">
+<main class="min-h-screen bg-[url('/sun-tornado.svg')] bg-cover bg-no-repeat ">
+    <div class="pt-20 pb-20">
         <slot />
     </div>
 </main>

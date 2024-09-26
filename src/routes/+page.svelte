@@ -1,16 +1,25 @@
 <script>
-    import FlagBtn from "$lib/components/FlagBtn.svelte";
     import LangContainer from "$lib/components/LangContainer.svelte";
+    import TypingEffect from "$lib/components/TypingEffect.svelte";
 </script>
-
-<section id="about" class="text-9xl">
-    <h1>Welcome to SvelteKit</h1>
-    <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-    Get started with Tailwind CSS
-    Tailwind CSS works by scanning all of your HTML files, JavaScript components, and any other templates for class names, generating the corresponding styles and then writing them to a static CSS file.Get started with Tailwind CSS
+    
+<section class="flex pt-24 pb-12 px-12 h-svh">
+    <span class="flex items-center justify-center w-1/3 text-7xl text-zinc-50">
+        Precisando reforçar seu vocabulário em outras linguas?
+    </span>
+    
+    <div class="flex items-center justify-center flex-grow text-5xl">
+        <span class="text-zinc-50">Então veio ao&nbsp;</span>
+        <TypingEffect />
+        <span class="text-zinc-50">&nbsp;certo!</span>
+    </div>
 </section>
 
-<section id="start" class="flex flex-wrap flex-col items-center p-4">
+<section id="about" class="flex h-svh bg-slate-200 min-h-48">
+
+</section>
+
+<section id="start" class="flex flex-col h-6 items-center p-4">
     <span>Escolha qual língua quer aprender e comece agora!</span>
     <LangContainer />
 </section>
