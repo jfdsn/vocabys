@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { translateStore } from '../../stores/translateStore';
-
+    
     let translate: string;
 
     onMount(() => {
