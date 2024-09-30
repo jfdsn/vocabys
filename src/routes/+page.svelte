@@ -18,7 +18,7 @@
     </div>
 </section>
 
-<section id="about" class="flex p-6 bg-slate-200 min-h-96">
+<section id="about" class="flex p-6 bg-slate-300 h-svh">
     <div class="grid grid-cols-4 gap-4 items-center justify-center px-6">
         <div class="col-span-2">
             <span class="text-4xl text-justify">
@@ -40,7 +40,7 @@
     </div>
 </section>
 
-<section id="start" class="flex flex-col h-6 items-center p-4">
-    <span>Escolha qual língua quer aprender e comece agora!</span>
+<section id="start" class="flex flex-col justify-center items-center h-60 p-4">
+    <span class="text-2xl text-zinc-50 mb-4">Escolha qual língua quer aprender e comece agora!</span>
     <LangContainer />
 </section>

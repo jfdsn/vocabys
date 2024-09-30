@@ -12,8 +12,8 @@
     ];
 </script>
 
-<div class="flex flex-wrap space-x-3">
-    {#each buttons as { countryCode, translate, label }, i}
+<div class="flex flex-wrap space-x-3 p-4">
+    {#each buttons as { countryCode, translate, label }}
         <FlagBtn
             countryCode={countryCode}
             translate={translate}
