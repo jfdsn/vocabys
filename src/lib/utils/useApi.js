@@ -12,14 +12,17 @@ export const useApi = async () => {
         messages: [
         {
             role: "system", 
-            content: "You respond skiping introduction, using this JSON format {words: [{entry: 'word', translate: 'translate', pronounce: 'pronounce' }, {entry: 'word', translate: 'translate', pronounce: 'pronounce' }],}"
+            content: `You respond skiping introduction, using this JSON format {"words": [{"entry": "word", "translate": "translate", "pronounce": "pronounce"}, {"entry": "word", "translate": "translate", "pronounce": "pronounce"}]}`
         },
         {
             role: 'user',
-            content: '5 enviroment related words in pt-br translated to ko and pronounce in ko',
+            content: '12 random cloths related words in ko translated to pt-br and how to pronounce',
         },
         ],
     });
-    
-    return response;
+
+    console.log(response)
+    if(response.message?.content) return response.message.content[0].text;
+
+    return "";
 };
