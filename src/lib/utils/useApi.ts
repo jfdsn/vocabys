@@ -6,7 +6,7 @@ const cohere = new CohereClientV2({
     token: api_key
 });
 
-export const useApi = async () => {
+export const useApi = async (content: string) => {
     const response = await cohere.chat({
         model: 'command-r-plus',
         messages: [
@@ -16,7 +16,7 @@ export const useApi = async () => {
         },
         {
             role: 'user',
-            content: '12 random cloths related words in ko translated to pt-br and how to pronounce',
+            content: content,
         },
         ],
     });

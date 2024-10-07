@@ -2,19 +2,25 @@
     import { onMount } from 'svelte';
     import { translateStore } from '../../stores/translateStore';
 	import { useApi } from '$lib/utils/useApi';
-    import { correctResult } from '$lib/utils/correctJson';
+    import { correctResult } from '$lib/utils/correctJson'
+    import { contentBuilder } from '$lib/utils/contentBuilder';
     import WordsInput from '$lib/components/WordsInput.svelte';
-    
-    let translateLang: string;
-    let message: any = null;
-    
 
+    
+    let learningLang: string;
+    let message: any = null;
+  
     onMount(() => {
         const unsubscribe = translateStore.subscribe(value => {
-            translateLang = value;
+            learningLang = value;
         });
 
-        useApi().then(result => {
+        let content: string = new contentBuilder()
+            .setLearningLang(learningLang)
+            .setUserLang("pt-br")
+            .build()
+
+        useApi(content).then(result => {
             message = JSON.parse(correctResult(result));
         });
 
