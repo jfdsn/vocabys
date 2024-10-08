@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { translateStore } from '../../stores/translateStore';
+    import { learningLangStore } from '../../stores/paramsStore';
 	import { useApi } from '$lib/utils/useApi';
     import { correctResult } from '$lib/utils/correctJson'
     import { contentBuilder } from '$lib/utils/contentBuilder';
@@ -11,7 +11,7 @@
     let message: any = null;
   
     onMount(() => {
-        const unsubscribe = translateStore.subscribe(value => {
+        const unsubscribe = learningLangStore.subscribe(value => {
             learningLang = value;
         });
 
@@ -33,7 +33,7 @@
     {#if message}
         {#each message.words as { entry, translate, pronounce }}
             <div class="text-2xl">
-                {entry} {translate} {pronounce}
+                {entry} - {translate} - {pronounce}
             </div>
         {/each}
     {:else}

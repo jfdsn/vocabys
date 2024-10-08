@@ -1,13 +1,13 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
-    import { translateStore } from "../../stores/translateStore";
+    import { learningLangStore } from "../../stores/paramsStore";
     
     export let countryCode: string;
     export let translate : string;
     export let label: string;
 
     const changeLanguage = (translate: string) => {
-        translateStore.set(translate);
+        learningLangStore.set(translate);
     };
 
     const handleClick = () => {

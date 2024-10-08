@@ -17,6 +17,7 @@
         {id: 'Furniture', label: 'Móveis'},
         {id: 'Fruit', label: 'Fruta'},
         {id: 'Body', label: 'Parte do corpo'},
+        {id: 'Family Members', label: 'Membros da Família'}
     ]
 
     categories.sort((a, b) => a.label.localeCompare(b.label));
