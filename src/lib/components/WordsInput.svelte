@@ -1,6 +1,5 @@
 <script lang="ts">
-    let wordNum: number = 5;
-    let selectedCategory: string = "";
+    import { numOfWordsStore, categoryStore } from "../../stores/paramsStore";
 
     const categories = [
         {id: 'Food', label: 'Comida'},
@@ -35,7 +34,7 @@
                   type="radio"
                   name="category"
                   value={category.id}
-                  bind:group={selectedCategory}
+                  bind:group={$categoryStore}
                   class="accent-gray-900 mr-2"
                 />
                 {category.label}
@@ -46,21 +45,21 @@
     <div class="flex gap-4">
         <div class="mb-4 p-4 bg-indigo-100 rounded-lg shadow">
             <label for="wordNumber" class="block text-md font-medium text-gray-700">
-                Número de Palavras: {wordNum}
+                Número de Palavras: {$numOfWordsStore}
             </label>
             <input
             type="range"
             id="wordNumber"
             min="5"
             max="15"
-            bind:value={wordNum}
+            bind:value={$numOfWordsStore}
             class="mt-2 w-full accent-gray-900"
             />
         </div>
 
         <div class="mb-4 p-4 bg-indigo-100 rounded-lg shadow">
-            <p><strong>Número de Palavras:</strong> {wordNum}</p>
-            <p><strong>Categoria Selecionada:</strong> {selectedCategory}</p>
+            <p><strong>Número de Palavras:</strong> {$numOfWordsStore}</p>
+            <p><strong>Categoria Selecionada:</strong> {$categoryStore}</p>
         </div>
     </div>
 

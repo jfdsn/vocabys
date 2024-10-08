@@ -1,35 +1,30 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { learningLangStore } from '../../stores/paramsStore';
+    import { learningLangStore, numOfWordsStore, categoryStore } from '../../stores/paramsStore';
 	import { useApi } from '$lib/utils/useApi';
     import { correctResult } from '$lib/utils/correctJson'
     import { contentBuilder } from '$lib/utils/contentBuilder';
     import WordsInput from '$lib/components/WordsInput.svelte';
 
-    
-    let learningLang: string;
     let message: any = null;
-  
-    onMount(() => {
-        const unsubscribe = learningLangStore.subscribe(value => {
-            learningLang = value;
-        });
 
+    const callApi = () => {
         let content: string = new contentBuilder()
-            .setLearningLang(learningLang)
+            .setLearningLang($learningLangStore)
             .setUserLang("pt-br")
+            .setCategory($categoryStore)
+            .setNumOfWords($numOfWordsStore)
             .build()
 
         useApi(content).then(result => {
             message = JSON.parse(correctResult(result));
         });
-
-        return () => unsubscribe();
-    });
+    }
 </script>
 
 <main>
     <WordsInput />
+    <button on:click={callApi} class="bg-slate-200"> Teste</button>
     {#if message}
         {#each message.words as { entry, translate, pronounce }}
             <div class="text-2xl">

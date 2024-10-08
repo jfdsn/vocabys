@@ -17,7 +17,7 @@ export class contentBuilder {
             numOfWords: 5
         };
 
-        this.content = `${this.params.numOfWords} random ${this.params.category} words in ${this.params.learningLang} translated to ${this.params.userLang} and how to pronounce`;
+        this.content = "";
     }
 
     setLearningLang(learningLang: string): contentBuilder {
