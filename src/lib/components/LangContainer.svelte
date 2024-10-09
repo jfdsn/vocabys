@@ -9,6 +9,7 @@
         { countryCode: 'it', translate: 'it', label: 'Italiano'},
         { countryCode: 'kr', translate: 'ko', label: '한국어' },
         { countryCode: 'jp', translate: 'ja', label: '日本語' },
+        { countryCode: 'cn', translate: 'cn', label: '中国人'}
     ];
 </script>
 

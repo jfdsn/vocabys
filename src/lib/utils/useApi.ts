@@ -1,6 +1,6 @@
 import { CohereClientV2 } from 'cohere-ai';
 
-let api_key = import.meta.env.VITE_API_KEY;
+const api_key = import.meta.env.VITE_API_KEY;
 
 const cohere = new CohereClientV2({
     token: api_key
