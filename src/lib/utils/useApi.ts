@@ -12,7 +12,7 @@ export const useApi = async (content: string) => {
         messages: [
         {
             role: "system", 
-            content: `You respond skiping introduction, using this JSON format {"words": [{"entry": "word", "translate": "translate", "pronounce": "pronounce"}, {"entry": "word", "translate": "translate", "pronounce": "pronounce"}]}`
+            content: `You respond skiping introduction, using this JSON format {"words": [{"entry": "word", "out": "translate", "speak": "pronounce"}, {"entry": "word", "out": "translate", "speak": "pronounce"}]}`
         },
         {
             role: 'user',

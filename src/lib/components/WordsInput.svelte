@@ -1,5 +1,6 @@
 <script lang="ts">
     import { numOfWordsStore, categoryStore } from "../../stores/paramsStore";
+    import CallApiBtn from "./CallApiBtn.svelte";
 
     const categories = [
         {id: 'Food', label: 'Comida'},
@@ -57,9 +58,8 @@
             />
         </div>
 
-        <div class="mb-4 p-4 bg-indigo-100 rounded-lg shadow">
-            <p><strong>Número de Palavras:</strong> {$numOfWordsStore}</p>
-            <p><strong>Categoria Selecionada:</strong> {$categoryStore}</p>
+        <div class="flex items-center mb-4 p-4 bg-indigo-100 rounded-lg shadow">
+            <CallApiBtn />
         </div>
     </div>
 
