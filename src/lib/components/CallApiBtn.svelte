@@ -24,5 +24,5 @@
     on:click={callApi} 
     class="flex items-center h-10 space-x-2 px-3 py-2 bg-gray-900 rounded hover:bg-gray-800"
     >
-    <span class="text-white">Gerar Palavras</span>
+    <span class="text-slate-100">Gerar Palavras</span>
 </button>
