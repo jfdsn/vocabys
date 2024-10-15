@@ -11,7 +11,9 @@
     {#if !$messageStore}
         <span class="text-xl">Aguardando escolha do usuário</span>
     {:else if $messageStore == "Loading"}
-        <p class="text-xl">Carregando...</p>
+        <span class="text-xl">Carregando...</span>
+    {:else if $messageStore == "Error"}
+        <span class="text-xl">Oops! Ocorreu algum erro. Tente novamente.</span>
     {:else}
     <table class="min-w-fit table-auto border-collapse text-xl bg-gray-900">
         <thead>

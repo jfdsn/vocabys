@@ -15,7 +15,12 @@
             .build()
 
         useApi(content).then(result => {
-            $messageStore = JSON.parse(correctResult(result));
+            try {
+                $messageStore = JSON.parse(correctResult(result));
+            }catch(e) {
+                $messageStore = "Error"
+                console.log(e);
+            }
         });
     }
 </script>
