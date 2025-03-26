@@ -1,33 +1,49 @@
 <script lang="ts">
     import { learningLangStore, numOfWordsStore, categoryStore, messageStore } from '../../stores/paramsStore';
 	import { useApi } from '$lib/utils/useApi';
-    import { correctResult } from '$lib/utils/correctJson'
     import { contentBuilder } from '$lib/utils/contentBuilder';
+    import { getErrorMessage } from '$lib/utils/errors';
 
-    const callApi = () => {
-        $messageStore = "Loading";
+    let isLoading = false;
 
-        let content: string = new contentBuilder()
-            .setLearningLang($learningLangStore)
-            .setUserLang("pt-br")
-            .setCategory($categoryStore)
-            .setNumOfWords($numOfWordsStore)
-            .build()
+    const callApi = async () => {
+        isLoading = true;
+        $messageStore = "Carregando...";
 
-        useApi(content).then(result => {
-            try {
-                $messageStore = JSON.parse(correctResult(result));
-            }catch(e) {
-                $messageStore = "Error"
-                console.log(e);
+        try {
+            let content: string = new contentBuilder()
+                .setLearningLang($learningLangStore)
+                .setUserLang("pt-br")
+                .setCategory($categoryStore)
+                .setNumOfWords($numOfWordsStore)
+                .build();
+
+            const result = await useApi(content);
+            
+            if (typeof result === 'string') {
+                const parsedResult = JSON.parse(result);
+                $messageStore = parsedResult;
+            } else {
+                $messageStore = getErrorMessage(result);
+                console.error('API Error:', result);
             }
-        });
+        } catch (e) {
+            $messageStore = "Erro ao processar a resposta";
+            console.error('Unexpected error:', e);
+        } finally {
+            isLoading = false;
+        }
     }
 </script>
 
 <button
     on:click={callApi} 
-    class="flex items-center h-10 space-x-2 px-3 py-2 bg-gray-900 rounded hover:bg-gray-800"
-    >
-    <span class="text-slate-100">Gerar Palavras</span>
+    class="flex items-center h-10 space-x-2 px-3 py-2 bg-gray-900 rounded hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+    disabled={isLoading}
+>
+    {#if isLoading}
+        <span class="text-slate-100">Gerando...</span>
+    {:else}
+        <span class="text-slate-100">Gerar Palavras</span>
+    {/if}
 </button>
