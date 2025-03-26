@@ -2,7 +2,7 @@
     import { messageStore } from '../../stores/paramsStore';
 	import { onMount } from 'svelte';
     import type { MessageStore, Word, MessageStoreType } from '../../stores/paramsStore';
-
+    import { _ } from 'svelte-i18n';
     onMount(() => {
         $messageStore = null;
     });
@@ -24,9 +24,9 @@
 
 <div class="flex justify-center mt-4 text-slate-100 w-full px-2 sm:px-4">
     {#if !$messageStore}
-        <span class="text-lg sm:text-xl">Aguardando escolha do usuário</span>
+        <span class="text-lg sm:text-xl">{$_('vocabulary.waiting')}</span>
     {:else if isLoading}
-        <span class="text-lg sm:text-xl">Carregando...</span>
+        <span class="text-lg sm:text-xl">{$_('vocabulary.loading')}</span>
     {:else if isError}
         <span class="text-lg sm:text-xl">{$messageStore}</span>
     {:else if isValidResponse && typedMessageStore}
@@ -34,9 +34,9 @@
             <table class="w-full table-auto border-collapse text-base sm:text-xl bg-gray-900">
                 <thead>
                     <tr>
-                        <th class="border px-2 sm:px-4 py-2 text-left">Palavra</th>
-                        <th class="border px-2 sm:px-4 py-2 text-left">Tradução</th>
-                        <th class="border px-2 sm:px-4 py-2 text-left">Pronúncia</th>
+                        <th class="border px-2 sm:px-4 py-2 text-left">{$_('vocabulary.word')}</th>
+                        <th class="border px-2 sm:px-4 py-2 text-left">{$_('vocabulary.translation')}</th>
+                        <th class="border px-2 sm:px-4 py-2 text-left">{$_('vocabulary.pronunciation')}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,7 +50,7 @@
                 </tbody>
             </table>
         </div>
-    {:else}
-        <span class="text-lg sm:text-xl">Formato de resposta inválido</span>
+        {:else}
+            <span class="text-lg sm:text-xl">{$_('vocabulary.error')}</span>
     {/if}
 </div>

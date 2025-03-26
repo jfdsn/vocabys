@@ -1,24 +1,27 @@
 <script lang="ts">
     import { numOfWordsStore, categoryStore } from "../../stores/paramsStore";
     import CallApiBtn from "./CallApiBtn.svelte";
+    import { _ } from 'svelte-i18n';
 
     const categories = [
-        {id: 'Food', label: 'Comida'},
-        {id: 'Cloth', label: 'Roupa'},
-        {id: 'House', label: 'Residência'},
-        {id: 'Object', label: 'Objeto'},
-        {id: 'Weather', label: 'Clima'},
-        {id: 'Work', label: 'Trabalho'},
-        {id: 'School', label: 'Escola'},
-        {id: 'Nature', label: 'Natureza'},
-        {id: 'Animal', label: 'Animal'},
-        {id: 'Sentiment', label: 'Sentimento'},
-        {id: 'City', label: 'Cidade'},
-        {id: 'Furniture', label: 'Móveis'},
-        {id: 'Fruit', label: 'Fruta'},
-        {id: 'Body', label: 'Parte do corpo'},
-        {id: 'Family Members', label: 'Membros da Família'},
-        {id: 'Colors', label: 'Cores'},
+        {id: 'Food', label: $_('vocabulary.categories.food')},
+        {id: 'Cloth', label: $_('vocabulary.categories.clothes')},
+        {id: 'House', label: $_('vocabulary.categories.house')},
+        {id: 'Object', label: $_('vocabulary.categories.objects')},
+        {id: 'Weather', label: $_('vocabulary.categories.weather')},
+        {id: 'Work', label: $_('vocabulary.categories.work')},
+        {id: 'School', label: $_('vocabulary.categories.school')},
+        {id: 'Nature', label: $_('vocabulary.categories.nature')},
+        {id: 'Animal', label: $_('vocabulary.categories.animals')},
+        {id: 'Sentiment', label: $_('vocabulary.categories.sentiments')},
+        {id: 'City', label: $_('vocabulary.categories.city')},
+        {id: 'Furniture', label: $_('vocabulary.categories.furniture')},
+        {id: 'Fruit', label: $_('vocabulary.categories.fruit')},
+        {id: 'Body', label: $_('vocabulary.categories.body')},
+        {id: 'Family Members', label: $_('vocabulary.categories.family')},
+        {id: 'Colors', label: $_('vocabulary.categories.colors')},
+        {id: 'Sports', label: $_('vocabulary.categories.sports')},
+        {id: 'Health', label: $_('vocabulary.categories.health')},
 
     ]
 
@@ -28,7 +31,7 @@
 <div class="flex flex-col items-center p-2 sm:p-4 w-full">
     <div class="mb-4 p-3 sm:p-4 bg-indigo-100 rounded-lg shadow w-full">
         <span class="block text-sm sm:text-md font-medium text-gray-700 mb-2">
-            Selecione uma categoria:
+            {$_('vocabulary.title')}
         </span>
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
             {#each categories as category}
@@ -48,7 +51,7 @@
     <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full">
         <div class="mb-4 p-3 sm:p-4 bg-indigo-100 rounded-lg shadow w-full sm:w-auto">
             <label for="wordNumber" class="block text-sm sm:text-md font-medium text-gray-700">
-                Número de Palavras: {$numOfWordsStore}
+                {$_('vocabulary.wordNumber')} {$numOfWordsStore}
             </label>
             <input
             type="range"

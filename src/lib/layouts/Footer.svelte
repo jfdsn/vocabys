@@ -1,7 +1,10 @@
+<script>
+    import { _ } from 'svelte-i18n';
+</script>
 <footer class="bg-gray-900 text-white py-6 sm:py-8">
     <div class="container mx-auto px-4">
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <p class="text-sm">&copy; 2024 Jonathan Faria</p>
+            <p class="text-sm">{$_('footer.copyright')}</p>
             <p class="text-sm sm:text-base">Stack for Devs - Svelte & Tailwind</p>
             <ul class="flex space-x-4">
                 <li>

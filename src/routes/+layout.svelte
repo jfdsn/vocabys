@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
     import '../global.css';
     import Header from '$lib/layouts/Header.svelte';
     import Footer from '$lib/layouts/Footer.svelte';
+    import '../lib/i18n';
 </script>
 
 <Header />
