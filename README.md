@@ -1,38 +1,73 @@
-# create-svelte
+# Vocabys App
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+A modern web application for learning vocabulary in different languages. Built with SvelteKit and TypeScript.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Generate vocabulary lists based on categories
+- Support for multiple languages
+- Text-to-speech pronunciation
+- Clean and intuitive user interface
+- Type-safe implementation with TypeScript
+- Responsive design
 
+## Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+## Setup
+
+1. Clone the repository:
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+git clone https://github.com/jfdsn/vocabys.git
+cd vocabys
 ```
 
-## Developing
+2. Install dependencies:
+```bash
+npm install
+```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+3. Start the development server:
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+The application will be available at `http://localhost:5173`
 
-To create a production version of your app:
+## Usage
 
-```bash
-npm run build
+1. Select your target language for learning
+2. Choose the number of words you want to generate
+3. Select a category (or "any" for random words)
+4. Click "Generate Words" to get your vocabulary list
+5. Use the speaker icon to hear the pronunciation of each word
+
+## Project Structure
+
+```
+src/
+├── lib/
+│   ├── components/     # Svelte components
+│   ├── stores/        # Svelte stores for state management
+│   └── utils/         # Utility functions and API hooks
+├── routes/            # SvelteKit routes
+└── app.html          # Main HTML template
 ```
 
-You can preview the production build with `npm run preview`.
+## Technologies Used
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- SvelteKit
+- TypeScript
+- Vite
+- TailwindCSS
+- Svelte Stores
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
