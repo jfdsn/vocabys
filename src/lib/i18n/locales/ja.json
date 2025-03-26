@@ -1,0 +1,62 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "about": "概要",
+        "getStarted": "始める"
+    },
+    "home": {
+        "title": "他の言語の語彙を強化したいですか？",
+        "subtitle1": "それなら ",
+        "subtitle2": " に来たのが正解です！",
+        "intro": "Vocabysは、新しい言語を学ぶ好奇心と生成AIの可能性を組み合わせた実験的なアプリケーションです。",
+        "card1": {
+            "title": "課題",
+            "description": "新しい言語を学ぶ際の最大の課題の1つは、流暢さのための基本的なスキルである語彙を拡張することです。広い語彙力がないと、コミュニケーションが制限され、フラストレーションを感じることになります。"
+        },
+        "card2": {
+            "title": "解決策",
+            "description": "生成AIの力を活用して、Vocabysは語彙を拡張する直感的で効率的な方法を提供します。数回のクリックで、ユーザーは概念別に整理された単語にアクセスでき、新しい用語の学習と既知の単語の復習が容易になります。"
+        },
+        "subtitle3": "カテゴリーを選択して、今すぐ学習を始めましょう！"
+    },
+    "vocabulary": {
+        "title": "カテゴリーを選択：",
+        "categories": {
+            "general": "一般",
+            "business": "ビジネス",
+            "technology": "テクノロジー",
+            "science": "科学",
+            "nature": "自然",
+            "health": "健康",
+            "food": "食べ物",
+            "travel": "旅行",
+            "sports": "スポーツ",
+            "house": "家",
+            "family": "家族",
+            "colors": "色",
+            "body": "体の部分",
+            "animals": "動物",
+            "furniture": "家具",
+            "objects": "物",
+            "weather": "天気",
+            "work": "仕事",
+            "school": "学校",
+            "city": "都市",
+            "sentiments": "感情",
+            "fruit": "果物",
+            "clothes": "服"
+        },
+        "wordNumber": "単語数：",
+        "generateBtn": "単語を生成",
+        "generating": "生成中...",
+        "waiting": "ユーザーの選択を待機中",
+        "loading": "読み込み中...",
+        "error": "単語の生成中にエラーが発生しました",
+        "word": "単語",
+        "translation": "翻訳",
+        "pronunciation": "発音"
+    },
+    "footer": {
+        "copyright": "© 2024 Vocabys. All rights reserved."
+    }
+} 

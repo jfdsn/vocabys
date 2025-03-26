@@ -1,0 +1,57 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "about": "Sobre",
+        "getStarted": "Comenzar"
+    },
+    "home": {
+        "title": "¿Necesitas reforzar tu vocabulario en otros idiomas?",
+        "subtitle1": "Entonces has llegado al ",
+        "subtitle2": " lugar correcto!",
+        "intro": "Vocabys es una aplicación experimental que combina la curiosidad de aprender nuevos idiomas con el potencial de la IA generativa.",
+        "card1": {
+            "title": "Problema",
+            "description": "Uno de los mayores desafíos al aprender un nuevo idioma es expandir el vocabulario, una habilidad fundamental para la fluidez. Sin un vocabulario amplio, la comunicación se vuelve limitada y frustrante."
+        },
+        "card2": {
+            "title": "Solución",
+            "description": "Aprovechando el poder de la IA generativa, Vocabys ofrece una manera intuitiva y eficiente de ampliar tu vocabulario. Con solo unos clics, los usuarios tienen acceso a palabras organizadas por conceptos, facilitando tanto el aprendizaje de nuevos términos como la revisión de palabras ya conocidas."
+        },
+        "subtitle3": "¡Elige una categoría y comienza a aprender ahora!"
+    },
+    "vocabulary": {
+        "title": "Selecciona una categoría:",
+        "categories": {
+            "nature": "Naturaleza",
+            "health": "Salud",
+            "food": "Comida",
+            "house": "Casa",
+            "sports": "Deportes",
+            "family": "Familia",
+            "colors": "Colores",
+            "body": "Partes del cuerpo",
+            "animals": "Animales",
+            "furniture": "Muebles",
+            "objects": "Objetos",
+            "weather": "Clima",
+            "work": "Trabajo",
+            "school": "Escuela",
+            "city": "Ciudad",
+            "sentiments": "Sentimientos",
+            "fruit": "Frutas",
+            "clothes": "Ropa"
+        },
+        "wordNumber": "Número de palabras:",
+        "generateBtn": "Generar palabras",
+        "generating": "Generando...",
+        "waiting": "Esperando elección del usuario",
+        "loading": "Cargando...",
+        "error": "Error al generar palabras",
+        "word": "Palabra",
+        "translation": "Traducción",
+        "pronunciation": "Pronunciación"
+    },
+    "footer": {
+        "copyright": "© 2024 Vocabys. Todos los derechos reservados."
+    }
+}  

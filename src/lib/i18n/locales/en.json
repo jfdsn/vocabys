@@ -1,0 +1,57 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "getStarted": "Get Started"
+    },
+    "home": {
+        "title": "Need to reinforce your vocabulary in other languages?",
+        "subtitle1": "Then you came to the ",
+        "subtitle2": " right place!",
+        "intro": "Vocabys is an experimental application that combines the curiosity of learning new languages with the potential of generative AI.",
+        "card1": {
+            "title": "Problem",
+            "description": "One of the biggest challenges to learning a new language is expanding the vocabulary, a fundamental skill for fluency. Without a broad vocabulary, communication becomes limited and frustrating."
+        },
+        "card2": {
+            "title": "Solution",
+            "description": "Utilizing the power of generative AI, Vocabys offers an intuitive and efficient way to expand your vocabulary. With just a few clicks, users have access to words organized by concepts, making it easier to learn new terms and review familiar words."
+        },
+        "subtitle3": "Choose a category and start learning now!"
+    },
+    "vocabulary": {
+        "title": "Choose a category:",
+        "categories": {
+            "nature": "Nature",
+            "health": "Health",
+            "food": "Food",
+            "house": "House",
+            "sports": "Sports",
+            "family": "Family",
+            "colors": "Colors",
+            "body": "Body Parts",
+            "animals": "Animals",
+            "furniture": "Furniture",
+            "objects": "Objects",
+            "weather": "Weather",
+            "work": "Work",
+            "school": "School",
+            "city": "City",
+            "sentiments": "Feelings",
+            "fruit": "Fruits",
+            "clothes": "Clothes"
+        },
+        "wordNumber": "Number of Words: ",
+        "generateBtn": "Generate Words",
+        "generating": "Generating...",
+        "waiting": "Waiting for user choice",
+        "loading": "Loading...",
+        "error": "Error generating words",
+        "word": "Word",
+        "translation": "Translation",
+        "pronunciation": "Pronunciation"
+    },
+    "footer": {
+        "copyright": "© 2024 Vocabys. All rights reserved."
+    }
+} 
