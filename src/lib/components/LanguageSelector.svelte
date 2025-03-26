@@ -1,6 +1,7 @@
 <script lang="ts">
     import { userLangStore } from "../../stores/paramsStore";
     import { createEventDispatcher } from 'svelte';
+    import { locale } from 'svelte-i18n';
     
     const dispatch = createEventDispatcher();
     
@@ -10,8 +11,8 @@
     let isMenuOpen = false;
     
     const languages = [
-        { code: 'pt-br', name: 'Português', flag: 'br' },
         { code: 'en', name: 'English', flag: 'us' },
+        { code: 'pt-br', name: 'Português', flag: 'br' },
         { code: 'fr', name: 'Français', flag: 'fr' },
         { code: 'es', name: 'Español', flag: 'es' },
         { code: 'ja', name: '日本語', flag: 'jp' },
@@ -20,6 +21,7 @@
 
     const setLanguage = (langCode: string) => {
         userLangStore.set(langCode);
+        locale.set(langCode);
         dispatch('languageChange', { langCode });
         isMenuOpen = false;
         if (!isMobile) {

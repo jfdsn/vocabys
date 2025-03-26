@@ -3,6 +3,7 @@
 	import { useApi } from '$lib/utils/useApi';
     import { contentBuilder } from '$lib/utils/contentBuilder';
     import { getErrorMessage } from '$lib/utils/errors';
+    import { _ } from 'svelte-i18n';
 
     let isLoading = false;
 
@@ -42,8 +43,8 @@
     disabled={isLoading}
 >
     {#if isLoading}
-        <span class="text-slate-100">Gerando...</span>
+        <span class="text-slate-100">{$_('vocabulary.generating')}</span>
     {:else}
-        <span class="text-slate-100">Gerar Palavras</span>
+        <span class="text-slate-100">{$_('vocabulary.generateBtn')}</span>
     {/if}
 </button>

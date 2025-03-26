@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { userLangStore } from "../../stores/paramsStore";
     import LanguageSelector from "../components/LanguageSelector.svelte";
+    import { _ } from 'svelte-i18n';
     
     let isScrolled: boolean = false;
     let isMenuOpen: boolean = false;
@@ -46,9 +47,9 @@
         <!-- Desktop navigation -->
         <nav class="hidden md:flex items-center space-x-6">
             <ul class="flex space-x-6 text-lg font-semibold text-white">
-                <li><a href="/" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">Home</a></li>
-                <li><a href="/#about" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">About</a></li>
-                <li><a href="/#start" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">Get Started</a></li>
+                <li><a href="/" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">{$_('nav.home')}</a></li>
+                <li><a href="/#about" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">{$_('nav.about')}</a></li>
+                <li><a href="/#start" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">{$_('nav.getStarted')}</a></li>
             </ul>
 
             <!-- Desktop language selector -->
@@ -79,9 +80,9 @@
     {#if isMenuOpen}
         <nav class="absolute top-full left-0 w-full bg-gray-900 bg-opacity-95 md:hidden">
             <ul class="flex flex-col p-4 space-y-4 text-lg font-semibold text-white">
-                <li><a href="/" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>Home</a></li>
-                <li><a href="/#about" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>About</a></li>
-                <li><a href="/#start" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>Get Started</a></li>
+                <li><a href="/" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>{$_('nav.home')}</a></li>
+                <li><a href="/#about" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>{$_('nav.about')}</a></li>
+                <li><a href="/#start" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>{$_('nav.getStarted')}</a></li>
                 
                 <!-- Mobile language selector -->
                 <li>
