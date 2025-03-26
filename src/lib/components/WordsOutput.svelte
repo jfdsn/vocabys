@@ -22,33 +22,35 @@
     $: typedMessageStore = isValidResponse ? ($messageStore as MessageStore) : null;
 </script>
 
-<div class="flex justify-center mt-4 text-slate-100">
+<div class="flex justify-center mt-4 text-slate-100 w-full px-2 sm:px-4">
     {#if !$messageStore}
-        <span class="text-xl">Aguardando escolha do usuário</span>
+        <span class="text-lg sm:text-xl">Aguardando escolha do usuário</span>
     {:else if isLoading}
-        <span class="text-xl">Carregando...</span>
+        <span class="text-lg sm:text-xl">Carregando...</span>
     {:else if isError}
-        <span class="text-xl">{$messageStore}</span>
+        <span class="text-lg sm:text-xl">{$messageStore}</span>
     {:else if isValidResponse && typedMessageStore}
-        <table class="min-w-fit table-auto border-collapse text-xl bg-gray-900">
-            <thead>
-                <tr>
-                    <th class="border px-4 py-2">Palavra</th>
-                    <th class="border px-4 py-2">Tradução</th>
-                    <th class="border px-4 py-2">Pronúncia</th>
-                </tr>
-            </thead>
-            <tbody>
-                {#each typedMessageStore.words as { entry, out, speak }}
+        <div class="w-full overflow-x-auto">
+            <table class="w-full table-auto border-collapse text-base sm:text-xl bg-gray-900">
+                <thead>
                     <tr>
-                        <td class="border px-4 py-2">{out}</td>
-                        <td class="border px-4 py-2">{entry}</td>
-                        <td class="border px-4 py-2">{speak}</td>
+                        <th class="border px-2 sm:px-4 py-2 text-left">Palavra</th>
+                        <th class="border px-2 sm:px-4 py-2 text-left">Tradução</th>
+                        <th class="border px-2 sm:px-4 py-2 text-left">Pronúncia</th>
                     </tr>
-                {/each}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {#each typedMessageStore.words as { entry, out, speak }}
+                        <tr>
+                            <td class="border px-2 sm:px-4 py-2">{out}</td>
+                            <td class="border px-2 sm:px-4 py-2">{entry}</td>
+                            <td class="border px-2 sm:px-4 py-2">{speak}</td>
+                        </tr>
+                    {/each}
+                </tbody>
+            </table>
+        </div>
     {:else}
-        <span class="text-xl">Formato de resposta inválido</span>
+        <span class="text-lg sm:text-xl">Formato de resposta inválido</span>
     {/if}
 </div>

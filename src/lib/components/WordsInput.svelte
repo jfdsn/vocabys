@@ -25,14 +25,14 @@
     categories.sort((a, b) => a.label.localeCompare(b.label));
 </script>
 
-<div class="flex flex-col items-center p-4">
-    <div class="mb-4 p-4 bg-indigo-100 rounded-lg shadow">
-        <span class="block text-md font-medium text-gray-700">
+<div class="flex flex-col items-center p-2 sm:p-4 w-full">
+    <div class="mb-4 p-3 sm:p-4 bg-indigo-100 rounded-lg shadow w-full">
+        <span class="block text-sm sm:text-md font-medium text-gray-700 mb-2">
             Selecione uma categoria:
         </span>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
             {#each categories as category}
-              <label class="block mt-2">
+              <label class="block text-sm sm:text-base">
                 <input
                   type="radio"
                   name="category"
@@ -45,9 +45,9 @@
             {/each}
         </div>
     </div>
-    <div class="flex gap-4">
-        <div class="mb-4 p-4 bg-indigo-100 rounded-lg shadow">
-            <label for="wordNumber" class="block text-md font-medium text-gray-700">
+    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full">
+        <div class="mb-4 p-3 sm:p-4 bg-indigo-100 rounded-lg shadow w-full sm:w-auto">
+            <label for="wordNumber" class="block text-sm sm:text-md font-medium text-gray-700">
                 Número de Palavras: {$numOfWordsStore}
             </label>
             <input
@@ -60,9 +60,8 @@
             />
         </div>
 
-        <div class="flex items-center mb-4 p-4 bg-indigo-100 rounded-lg shadow">
+        <div class="flex items-center justify-center mb-4 p-3 sm:p-4 bg-indigo-100 rounded-lg shadow w-full sm:w-auto">
             <CallApiBtn />
         </div>
     </div>
-
 </div>
