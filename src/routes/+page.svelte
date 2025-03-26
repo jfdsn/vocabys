@@ -6,15 +6,17 @@
     
 <section class="flex flex-col md:flex-row pt-12 md:pt-24 pb-8 md:pb-12 px-4 md:px-12 min-h-svh">
     <div class="flex items-center justify-center w-full md:w-1/3 px-4 md:px-6 mb-8 md:mb-0">
-        <span class="text-3xl md:text-5xl lg:text-7xl text-zinc-50 text-center md:text-left">
+        <span class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-zinc-50 text-center md:text-left">
             Precisando reforçar seu vocabulário em outras linguas?
         </span>
     </div>
     
-    <div class="flex items-center justify-center flex-grow text-3xl md:text-4xl lg:text-5xl">
-        <span class="text-zinc-50">Então veio ao&nbsp;</span>
-        <TypingEffect />
-        <span class="text-zinc-50">&nbsp;certo!</span>
+    <div class="flex items-center justify-center flex-grow text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+        <div class="flex flex-wrap justify-center items-center gap-1">
+            <span class="text-zinc-50">Então veio ao&nbsp;</span>
+            <TypingEffect />
+            <span class="text-zinc-50">&nbsp;certo!</span>
+        </div>
     </div>
 </section>
 

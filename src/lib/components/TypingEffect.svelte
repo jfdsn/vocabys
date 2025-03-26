@@ -1,12 +1,12 @@
 <script lang="ts">
     import { onMount } from 'svelte';
   
-    const phrases = ["lugar", "place", "lieu", "posto", "場所", "장소"];
+    const phrases = ["lugar", "place", "lieu", "場所", "장소"];
     let currentPhraseIndex = 0;
     let displayedText = '';
   
     function typePhrase(phrase: string, delay: number) {
-      displayedText = ''; // Limpa o texto
+      displayedText = '';
       let i = 0;
   
       const typingInterval = setInterval(() => {
@@ -17,7 +17,7 @@
             erasePhrase(phrase.length);
           }, delay);
         }
-      }, 200); // Velocidade de digitação
+      }, 200);
     }
   
     function erasePhrase(length: number) {
@@ -26,14 +26,14 @@
         displayedText = displayedText.slice(0, --i);
         if (i < 0) {
           clearInterval(erasingInterval);
-          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length; // Passa para o próximo idioma
-          typePhrase(phrases[currentPhraseIndex], 2000); // Troca para a próxima palavra após 2 segundo
+          currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+          typePhrase(phrases[currentPhraseIndex], 2000);
         }
-      }, 100); // Velocidade de apagar
+      }, 100);
     }
   
     onMount(() => {
-        typePhrase(phrases[currentPhraseIndex], 2000); // Inicia a animação 
+        typePhrase(phrases[currentPhraseIndex], 2000);
     });
 </script>
 
