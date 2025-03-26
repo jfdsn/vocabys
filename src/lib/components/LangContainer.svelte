@@ -13,7 +13,7 @@
     ];
 </script>
 
-<div class="flex flex-wrap space-x-3 p-4">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 p-4 w-full max-w-4xl mx-auto">
     {#each buttons as { countryCode, translate, label }}
         <FlagBtn
             countryCode={countryCode}
