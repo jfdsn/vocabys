@@ -1,5 +1,7 @@
 <script lang='ts'>
     import { onMount } from "svelte";
+    import { userLangStore } from "../../stores/paramsStore";
+    import LanguageSelector from "../components/LanguageSelector.svelte";
     
     let isScrolled: boolean = false;
     let isMenuOpen: boolean = false;
@@ -12,8 +14,25 @@
         isMenuOpen = !isMenuOpen;
     };
 
+    const handleLanguageChange = (event: CustomEvent) => {
+        isMenuOpen = false;
+    };
+
     onMount(() => {
         window.addEventListener('scroll', handleScroll);
+        
+        // Detect system language
+        const systemLang = navigator.language || navigator.languages[0];
+        const detectedLang = ['pt-br', 'en', 'fr', 'es', 'ja', 'ko'].find(lang => 
+            systemLang.toLowerCase().startsWith(lang.split('-')[0])
+        );
+        
+        if (detectedLang) {
+            userLangStore.set(detectedLang);
+        } else {
+            userLangStore.set('en');
+        }
+        
         return () => window.removeEventListener('scroll', handleScroll);
     });
 </script>
@@ -24,6 +43,22 @@
             <a href="/">Vocabys</a>
         </div>
         
+        <!-- Desktop navigation -->
+        <nav class="hidden md:flex items-center space-x-6">
+            <ul class="flex space-x-6 text-lg font-semibold text-white">
+                <li><a href="/" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">Home</a></li>
+                <li><a href="/#about" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">About</a></li>
+                <li><a href="/#start" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">Get Started</a></li>
+            </ul>
+
+            <!-- Desktop language selector -->
+            <LanguageSelector 
+                isMobile={false}
+                onClose={() => {}}
+                on:languageChange={handleLanguageChange}
+            />
+        </nav>
+
         <!-- Mobile menu button -->
         <button 
             class="md:hidden text-white p-2"
@@ -38,25 +73,25 @@
                 {/if}
             </svg>
         </button>
+    </div>
 
-        <!-- Desktop navigation -->
-        <nav class="hidden md:block">
-            <ul class="flex space-x-6 text-lg font-semibold text-white">
-                <li><a href="/" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">Home</a></li>
-                <li><a href="/#about" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">About</a></li>
-                <li><a href="/#start" class="px-3 py-2 border-b-2 border-transparent hover:border-white hover:text-gray-400">Get Started</a></li>
+    <!-- Mobile navigation -->
+    {#if isMenuOpen}
+        <nav class="absolute top-full left-0 w-full bg-gray-900 bg-opacity-95 md:hidden">
+            <ul class="flex flex-col p-4 space-y-4 text-lg font-semibold text-white">
+                <li><a href="/" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>Home</a></li>
+                <li><a href="/#about" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>About</a></li>
+                <li><a href="/#start" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>Get Started</a></li>
+                
+                <!-- Mobile language selector -->
+                <li>
+                    <LanguageSelector 
+                        isMobile={true}
+                        onClose={() => {}}
+                        on:languageChange={handleLanguageChange}
+                    />
+                </li>
             </ul>    
         </nav>
-
-        <!-- Mobile navigation -->
-        {#if isMenuOpen}
-            <nav class="absolute top-full left-0 w-full bg-gray-900 bg-opacity-95 md:hidden">
-                <ul class="flex flex-col p-4 space-y-4 text-lg font-semibold text-white">
-                    <li><a href="/" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>Home</a></li>
-                    <li><a href="/#about" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>About</a></li>
-                    <li><a href="/#start" class="block px-3 py-2 hover:text-gray-400" on:click={() => isMenuOpen = false}>Get Started</a></li>
-                </ul>    
-            </nav>
-        {/if}
-    </div>
+    {/if}
 </header>

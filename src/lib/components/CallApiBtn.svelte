@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { learningLangStore, numOfWordsStore, categoryStore, messageStore } from '../../stores/paramsStore';
+    import { learningLangStore, numOfWordsStore, categoryStore, messageStore, userLangStore } from '../../stores/paramsStore';
 	import { useApi } from '$lib/utils/useApi';
     import { contentBuilder } from '$lib/utils/contentBuilder';
     import { getErrorMessage } from '$lib/utils/errors';
@@ -13,7 +13,7 @@
         try {
             let content: string = new contentBuilder()
                 .setLearningLang($learningLangStore)
-                .setUserLang("pt-br")
+                .setUserLang($userLangStore)
                 .setCategory($categoryStore)
                 .setNumOfWords($numOfWordsStore)
                 .build();
