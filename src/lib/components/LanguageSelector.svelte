@@ -29,7 +29,7 @@
         }
     };
 
-    $: currentLanguage = languages.find(lang => lang.code === $userLangStore) || languages[0];
+    $: currentLanguage = languages.find(lang => lang.code === $locale) || languages[0];
 
     const toggleMenu = () => {
         if (!isMobile) {

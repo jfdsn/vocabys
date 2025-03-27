@@ -17,10 +17,10 @@
             "title": "해결책",
             "description": "생성형 AI의 힘을 활용하여 Vocabys는 어휘를 확장하는 직관적이고 효율적인 방법을 제공합니다. 몇 번의 클릭만으로 사용자는 개념별로 정리된 단어에 접근할 수 있어 새로운 용어를 배우고 친숙한 단어를 복습하기 쉽습니다."
         },
-        "subtitle3": "카테고리를 선택하고 지금 바로 학습을 시작하세요!"
+        "subtitle3": "언어를 선택하고 지금 바로 학습을 시작하세요!"
     },
     "vocabulary": {
-        "title": "카테고리 선택:",
+        "title": "카테고리를 선택하세요:",
         "categories": {
             "general": "일반",
             "business": "비즈니스",
@@ -30,8 +30,31 @@
             "health": "건강",
             "food": "음식",
             "travel": "여행",
-            "sports": "스포츠"   
-        }
+            "sports": "스포츠",
+            "house": "집",
+            "family": "가족",
+            "colors": "색상",
+            "body": "신체 부위",
+            "animals": "동물",
+            "furniture": "가구",
+            "objects": "물건",
+            "weather": "날씨",
+            "work": "직장",
+            "school": "학교",
+            "city": "도시",
+            "sentiments": "감정",
+            "fruit": "과일",
+            "clothes": "의류"
+        },
+        "wordNumber": "단어 수:",
+        "generateBtn": "단어 생성",
+        "generating": "생성 중...",
+        "waiting": "사용자 선택 대기 중",
+        "loading": "로딩 중...",
+        "error": "단어 생성 중 오류 발생",
+        "word": "단어",
+        "translation": "번역",
+        "pronunciation": "발음"
     },
     "footer": {
         "copyright": "© 2024 Vocabys. All rights reserved."

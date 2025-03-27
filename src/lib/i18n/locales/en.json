@@ -17,29 +17,20 @@
             "title": "Solution",
             "description": "Utilizing the power of generative AI, Vocabys offers an intuitive and efficient way to expand your vocabulary. With just a few clicks, users have access to words organized by concepts, making it easier to learn new terms and review familiar words."
         },
-        "subtitle3": "Choose a category and start learning now!"
+        "subtitle3": "Choose a language and start learning now!"
     },
     "vocabulary": {
         "title": "Choose a category:",
         "categories": {
+            "general": "General",
+            "business": "Business",
+            "technology": "Technology",
+            "science": "Science",
             "nature": "Nature",
             "health": "Health",
             "food": "Food",
-            "house": "House",
-            "sports": "Sports",
-            "family": "Family",
-            "colors": "Colors",
-            "body": "Body Parts",
-            "animals": "Animals",
-            "furniture": "Furniture",
-            "objects": "Objects",
-            "weather": "Weather",
-            "work": "Work",
-            "school": "School",
-            "city": "City",
-            "sentiments": "Feelings",
-            "fruit": "Fruits",
-            "clothes": "Clothes"
+            "travel": "Travel",
+            "sports": "Sports"
         },
         "wordNumber": "Number of Words: ",
         "generateBtn": "Generate Words",

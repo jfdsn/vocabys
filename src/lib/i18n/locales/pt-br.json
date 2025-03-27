@@ -17,7 +17,7 @@
             "title": "Solução",
             "description": "Aproveitando o poder das IAs generativas, o Vocabys oferece uma maneira intuitiva e eficiente de ampliar o vocabulário. Com apenas alguns cliques, o usuário tem acesso a palavras organizadas por conceitos, facilitando tanto o aprendizado de novos termos quanto a revisão de palavras já conhecidas."
         },
-        "subtitle3": "Escolha uma categoria e comece a aprender agora!"
+        "subtitle3": "Escolha um idioma e comece a aprender agora!"
     },
     "vocabulary": {
         "title": "Selecione uma categoria:",
@@ -50,7 +50,6 @@
         "word": "Palavra",
         "translation": "Tradução",
         "pronunciation": "Pronúncia"
-
     },
     "footer": {
         "copyright": "© 2024 Vocabys. Todos os direitos reservados."
