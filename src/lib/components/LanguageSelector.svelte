@@ -29,7 +29,8 @@
         }
     };
 
-    $: currentLanguage = languages.find(lang => lang.code === $locale) || languages[0];
+    // Default to English if locale is not yet initialized
+    $: currentLanguage = languages.find(lang => lang.code === ($locale || 'en')) || languages[0];
 
     const toggleMenu = () => {
         if (!isMobile) {

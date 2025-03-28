@@ -1,31 +1,21 @@
 import { init, register } from 'svelte-i18n';
+import en from './locales/en.json';
+import es from './locales/es.json';
+import fr from './locales/fr.json';
+import ja from './locales/ja.json';
+import ko from './locales/ko.json';
+import ptBr from './locales/pt-br.json';
 
-register('en', () => import('./locales/en.json'));
-register('pt-br', () => import('./locales/pt-br.json'));
-register('fr', () => import('./locales/fr.json'));
-register('es', () => import('./locales/es.json'));
-register('ja', () => import('./locales/ja.json'));
-register('ko', () => import('./locales/ko.json'));
+export async function initI18n() {
+    register('en', () => Promise.resolve(en));
+    register('es', () => Promise.resolve(es));
+    register('fr', () => Promise.resolve(fr));
+    register('ja', () => Promise.resolve(ja));
+    register('ko', () => Promise.resolve(ko));
+    register('pt-br', () => Promise.resolve(ptBr));
 
-// Initialize with English as default
-init({
-    fallbackLocale: 'en',
-    initialLocale: 'en',
-    loadingDelay: 200,
-    formats: {
-        number: {
-            scientific: { notation: 'scientific' },
-            engineering: { notation: 'engineering' },
-            compactLong: { notation: 'compact', compactDisplay: 'long' },
-            compactShort: { notation: 'compact', compactDisplay: 'short' }
-        },
-        date: {
-            short: { month: 'numeric', day: 'numeric', year: 'numeric' },
-            long: { month: 'long', day: 'numeric', year: 'numeric' }
-        },
-        time: {
-            short: { hour: 'numeric', minute: 'numeric' },
-            long: { hour: 'numeric', minute: 'numeric', second: 'numeric' }
-        }
-    }
-}); 
+    await init({
+        fallbackLocale: 'en',
+        initialLocale: 'en'
+    });
+} 

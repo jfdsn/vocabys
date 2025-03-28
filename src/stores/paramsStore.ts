@@ -12,7 +12,7 @@ export interface MessageStore {
 
 export type MessageStoreType = null | string | MessageStore;
 
-export const userLangStore = writable('pt-br');
+export const userLangStore = writable('');
 export const learningLangStore = writable('en');
 export const numOfWordsStore = writable(5);
 export const categoryStore = writable('any');
