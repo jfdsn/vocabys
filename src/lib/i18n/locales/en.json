@@ -6,8 +6,8 @@
     },
     "home": {
         "title": "Need to reinforce your vocabulary in other languages?",
-        "subtitle1": "Then you came to the ",
-        "subtitle2": " right place!",
+        "subtitle1": "Then you came to the right ",
+        "subtitle2": " !",
         "intro": "Vocabys is an experimental application that combines the curiosity of learning new languages with the potential of generative AI.",
         "card1": {
             "title": "Problem",
@@ -49,7 +49,9 @@
         "error": "Error generating words",
         "word": "Word",
         "translation": "Translation",
-        "pronunciation": "Pronunciation"
+        "pronunciation": "Pronunciation",
+        "customCategory": "Custom Category",
+        "customCategoryPlaceholder": "Enter your custom category"
     },
     "footer": {
         "copyright": "© 2024 Vocabys. All rights reserved."

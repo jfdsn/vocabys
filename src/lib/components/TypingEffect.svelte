@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
   
-    const phrases = ["lugar", "place", "lieu", "場所", "장소"];
+    const phrases = ["lugar", "place", "endroit", "場所", "이곳"];
     let currentPhraseIndex = 0;
     let displayedText = '';
   

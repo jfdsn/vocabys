@@ -6,8 +6,8 @@
     },
     "home": {
         "title": "Besoin de renforcer votre vocabulaire dans d'autres langues ?",
-        "subtitle1": "Alors vous êtes au ",
-        "subtitle2": " bon endroit !",
+        "subtitle1": "Alors vous êtes au bon ",
+        "subtitle2": " !",
         "intro": "Vocabys est une application expérimentale qui combine la curiosité d'apprendre de nouvelles langues avec le potentiel de l'IA générative.",
         "card1": {
             "title": "Problème",
@@ -49,7 +49,9 @@
         "error": "Erreur lors de la génération des mots",
         "word": "Mot",
         "translation": "Traduction",
-        "pronunciation": "Prononciation"
+        "pronunciation": "Prononciation",
+        "customCategory": "Catégorie personnalisée",
+        "customCategoryPlaceholder": "Entrez votre catégorie personnalisée"
     },
     "footer": {
         "copyright": "© 2024 Vocabys. Tous droits réservés."

@@ -1,7 +1,7 @@
 <script lang='ts'>
     import { onMount } from "svelte";
     import LanguageSelector from "../components/LanguageSelector.svelte";
-    import { _, locale } from 'svelte-i18n';
+    import { _ } from 'svelte-i18n';
     
     let isScrolled: boolean = false;
     let isMenuOpen: boolean = false;

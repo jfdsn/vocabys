@@ -49,7 +49,9 @@
         "error": "Erro ao gerar palavras",
         "word": "Palavra",
         "translation": "Tradução",
-        "pronunciation": "Pronúncia"
+        "pronunciation": "Pronúncia",
+        "customCategory": "Categoria personalizada",
+        "customCategoryPlaceholder": "Digite sua categoria personalizada"
     },
     "footer": {
         "copyright": "© 2024 Vocabys. Todos os direitos reservados."

@@ -6,8 +6,8 @@
     },
     "home": {
         "title": "他の言語の語彙を強化する必要がありますか？",
-        "subtitle1": "それなら、",
-        "subtitle2": " 正しい場所に来ました！",
+        "subtitle1": "それからあなたは正しい",
+        "subtitle2": "に来ました！",
         "intro": "Vocabysは、新しい言語を学ぶ好奇心と生成AIの可能性を組み合わせた実験的なアプリケーションです。",
         "card1": {
             "title": "問題",
@@ -54,7 +54,9 @@
         "error": "単語の生成中にエラーが発生しました",
         "word": "単語",
         "translation": "翻訳",
-        "pronunciation": "発音"
+        "pronunciation": "発音",
+        "customCategory": "カスタムカテゴリ",
+        "customCategoryPlaceholder": "カスタムカテゴリを入力してください"
     },
     "footer": {
         "copyright": "© 2024 Vocabys. All rights reserved."

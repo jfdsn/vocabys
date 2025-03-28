@@ -3,7 +3,7 @@
     import CallApiBtn from "./CallApiBtn.svelte";
     import { _ } from 'svelte-i18n';
 
-    const categories = [
+    $: categories = [
         {id: 'Food', label: $_('vocabulary.categories.food')},
         {id: 'Cloth', label: $_('vocabulary.categories.clothes')},
         {id: 'House', label: $_('vocabulary.categories.house')},
@@ -25,7 +25,9 @@
 
     ]
 
-    categories.sort((a, b) => a.label.localeCompare(b.label));
+    $: sortedCategories = [...categories].sort((a, b) => a.label.localeCompare(b.label));
+
+    let customCategory = '';
 </script>
 
 <div class="flex flex-col items-center p-2 sm:p-4 w-full">
@@ -34,21 +36,38 @@
             {$_('vocabulary.title')}
         </span>
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
-            {#each categories as category}
+            {#each sortedCategories as category}
               <label class="block text-sm sm:text-base">
                 <input
                   type="radio"
                   name="category"
                   value={category.id}
                   bind:group={$categoryStore}
+                  on:click={() => customCategory = ""}
                   class="accent-gray-900 mr-2"
                 />
                 {category.label}
               </label>
             {/each}
+            <div class="col-span-2 md:col-span-1">
+                <label class="block text-sm sm:text-base">
+                    <input
+                    type="radio"
+                    name="category"
+                    value="Custom"
+                    bind:group={customCategory}
+                    on:click={() => $categoryStore = ""}
+                    class="accent-gray-900"
+                    />
+                    {$_('vocabulary.customCategory')}
+                </label>
+                {#if customCategory === 'Custom'}
+                    <input type="text" placeholder={$_('vocabulary.customCategoryPlaceholder')} bind:value={$categoryStore} class="p-1 mt-2 w-full accent-gray-900" style="display: block;"/>
+                {/if}
+            </div>
         </div>
     </div>
-    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full">
+    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-fit">
         <div class="mb-4 p-3 sm:p-4 bg-indigo-100 rounded-lg shadow w-full sm:w-auto">
             <label for="wordNumber" class="block text-sm sm:text-md font-medium text-gray-700">
                 {$_('vocabulary.wordNumber')} {$numOfWordsStore}

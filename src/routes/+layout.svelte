@@ -3,7 +3,6 @@
     import Header from '$lib/layouts/Header.svelte';
     import Footer from '$lib/layouts/Footer.svelte';
     import '../lib/i18n';
-   // import "../app.css";
     import I18nProvider from "$lib/components/I18nProvider.svelte";
 </script>
 
